@@ -1,28 +1,36 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rubato 隱私權政策</title>
+<title>Rubato Privacy Policy · 隱私權政策</title>
 <link rel="icon" type="image/png" href="icon.png" />
 <style>
   :root { --primary: #3b4cc0; --bg: #faf8f5; --text: #1c2150; --muted: #5b6088; --border: #e8e4dd; }
   body { margin: 0; background: var(--bg); color: var(--text);
     font: 16px/1.75 'Inter', 'Noto Sans TC', 'PingFang TC', system-ui, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
-  header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-  header img { width: 48px; height: 48px; }
-  h1 { margin: 0; font-size: 28px; color: var(--primary); }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+  .bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .bar img { width: 40px; height: 40px; }
+  .switch { display: flex; gap: 6px; }
+  .switch button { font: inherit; font-size: 14px; cursor: pointer; padding: 4px 14px; border-radius: 999px;
+    border: 1px solid var(--border); background: #fff; color: var(--primary); }
+  .switch button[aria-pressed='true'] { background: var(--primary); border-color: var(--primary); color: #fff; }
+  h1 { margin: 0 0 8px; font-size: 28px; color: var(--primary); }
   h2 { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 20px; }
   p, li { color: var(--text); }
-  p:first-of-type { color: var(--muted); }
+  h1 + p { color: var(--muted); }
   code { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: 14px; }
   a { color: var(--primary); }
 </style>
+<!-- 沒有 JavaScript 時，兩種語言都顯示，並隱藏切換鈕 -->
+<noscript><style>section[hidden] { display: block !important; } section + section { margin-top: 64px; padding-top: 32px; border-top: 4px solid #e8e4dd; } .switch { display: none; }</style></noscript>
 </head>
 <body>
 <main>
-<header><img src="icon.png" alt="" /><h1>Rubato 隱私權政策</h1></header>
+<div class="bar"><img src="icon.png" alt="Rubato" /><div class="switch"><button type="button" data-lang="zh">中文</button><button type="button" data-lang="en">English</button></div></div>
+<section id="sec-zh" lang="zh-Hant" hidden>
+<h1>Rubato 隱私權政策</h1>
 <p>最後更新：2026-10-17</p>
 <p>Rubato（以下稱「本擴充套件」）是在 YouTube 上提供循環、變速、節拍器與 BPM 偵測功能的瀏覽器擴充套件。我們重視你的隱私，以下說明本擴充套件如何處理資料。</p>
 <h2>我們不收集你的資料</h2>
@@ -31,7 +39,7 @@
 <p>為了讓你下次回來能接續使用，本擴充套件會使用瀏覽器的本機儲存空間（<code>chrome.storage.local</code>）儲存：</p>
 <ul>
 <li>每支影片的 ID，以及你為該影片設定的循環區間、播放速度、BPM、拍號與開關狀態。</li>
-<li>面板是否被隱藏。</li>
+<li>面板是否被隱藏，以及你選擇的介面語言。</li>
 </ul>
 <p>這些資料只存在你的瀏覽器裡，不會離開你的裝置。你可以隨時在瀏覽器的擴充套件管理頁移除本擴充套件，相關資料會一併被刪除。</p>
 <h2>音訊分析</h2>
@@ -49,6 +57,49 @@
 <p>若本政策有變更，會更新本頁面上的「最後更新」日期。</p>
 <h2>聯絡方式</h2>
 <p>如有任何問題，請聯絡：<a href="mailto:angular.ru3@gmail.com">angular.ru3@gmail.com</a></p>
+</section>
+<section id="sec-en" lang="en" hidden>
+<h1>Rubato Privacy Policy</h1>
+<p>Last updated: 2026-10-17</p>
+<p>Rubato ("the extension") is a browser extension that adds loop, speed, metronome and BPM detection tools to YouTube. We care about your privacy. This policy explains how the extension handles data.</p>
+<h2>We do not collect your data</h2>
+<p>The extension does <strong>not</strong> collect, transmit to external servers, share or sell any personal data or browsing data. It has no backend server and uses no analytics, advertising or tracking tools.</p>
+<h2>What is stored on your device</h2>
+<p>So that you can pick up where you left off, the extension uses your browser's local storage (<code>chrome.storage.local</code>) to store:</p>
+<ul>
+<li>The ID of each video, and the loop range, playback speed, BPM, time signature and switch states you set for it.</li>
+<li>Whether the panel is hidden, and the interface language you chose.</li>
+</ul>
+<p>This data stays in your browser and never leaves your device. You can remove the extension at any time from your browser's extensions page, and its data is deleted with it.</p>
+<h2>Audio analysis</h2>
+<p>When you press "Detect BPM", the extension analyzes the audio of the video that is playing, inside your browser, to estimate its tempo. <strong>The audio is not recorded, stored or sent anywhere.</strong> It is discarded after the analysis, and only the estimated BPM value is kept.</p>
+<h2>Permissions</h2>
+<ul>
+<li>Access to <code>youtube.com</code>: to control playback and show the control panel on video pages.</li>
+<li><code>storage</code>: to save the settings described above.</li>
+<li><code>scripting</code>: to load the extension's own bundled script into YouTube tabs that are already open after the extension is installed or updated.</li>
+</ul>
+<p>The extension does not load or run any remote code.</p>
+<h2>Third parties</h2>
+<p>The extension is not affiliated with YouTube or Google. Your activity on YouTube remains subject to YouTube's Terms of Service and Privacy Policy.</p>
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the "Last updated" date on this page will be updated.</p>
+<h2>Contact</h2>
+<p>If you have any questions, please contact: <a href="mailto:angular.ru3@gmail.com">angular.ru3@gmail.com</a></p>
+</section>
 </main>
+<script>
+  // 預設依瀏覽器語言：中文系顯示中文，其餘顯示英文；可用上方按鈕切換，網址加 #zh 或 #en 可直接指定
+  // （區塊 id 刻意用 sec- 前綴，避免和網址的 #zh／#en 重名而觸發瀏覽器的錨點捲動）
+  const fromHash = location.hash.replace('#', '');
+  const initial = ['zh', 'en'].includes(fromHash) ? fromHash : (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+  const show = (id) => {
+    document.querySelectorAll('section').forEach((s) => (s.hidden = s.id !== 'sec-' + id));
+    document.querySelectorAll('.switch button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === id)));
+    document.documentElement.lang = document.getElementById('sec-' + id).lang;
+  };
+  document.querySelectorAll('.switch button').forEach((b) => b.addEventListener('click', () => show(b.dataset.lang)));
+  show(initial);
+</script>
 </body>
 </html>
